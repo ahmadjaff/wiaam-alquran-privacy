@@ -1,4 +1,15 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>سياسة الخصوصية — وئام القرآن</title><style>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سياسة الخصوصية — وئام القرآن | Privacy Policy — Wiaam Al-Quran</title>
+<meta name="description" content="سياسة خصوصية تطبيق وئام القرآن، الإصدار 1.1.0 (18). Privacy policy of the Wiaam Al-Quran app, version 1.1.0 (18).">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://ahmadjaff.github.io/wiaam-alquran-privacy/">
+<link rel="alternate" hreflang="ar" href="https://ahmadjaff.github.io/wiaam-alquran-privacy/#ar">
+<link rel="alternate" hreflang="en" href="https://ahmadjaff.github.io/wiaam-alquran-privacy/#en">
+<style>
   :root {
     --bg: #f7f5f2;
     --surface: #ffffff;
@@ -6,6 +17,7 @@
     --text-muted: #5b6b62;
     --primary: #1f6f4a;
     --primary-dark: #164f35;
+    --primary-soft: #e6f1eb;
     --border: #e3ded6;
     --code-bg: #eef2ef;
   }
@@ -17,6 +29,7 @@
       --text-muted: #a9b3ac;
       --primary: #4caf82;
       --primary-dark: #7fd4a8;
+      --primary-soft: #1f2c25;
       --border: #2b3330;
       --code-bg: #1f2622;
     }
@@ -28,98 +41,529 @@
     background: var(--bg);
     color: var(--text);
     font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", Arial, sans-serif;
-    line-height: 1.9;
+    line-height: 1.85;
+    -webkit-text-size-adjust: 100%;
   }
-  .page {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 32px 20px 80px;
+  .page { max-width: 880px; margin: 0 auto; padding: 24px 16px 80px; }
+  .lang-bar {
+    display: flex; justify-content: center; gap: 8px; margin-bottom: 20px;
   }
-  header.hero {
-    text-align: center;
-    margin-bottom: 32px;
+  .lang-bar a {
+    display: inline-block; padding: 6px 18px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--primary-dark); text-decoration: none; font-weight: 600; font-size: 0.95rem;
   }
-  header.hero h1 {
-    font-size: 1.9rem;
-    margin: 0 0 8px;
-    color: var(--primary-dark);
-  }
-  header.hero p.updated {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin: 0;
+  .lang-bar a[aria-current="true"] { background: var(--primary); border-color: var(--primary); color: #fff; }
+  header.hero { text-align: center; margin-bottom: 24px; }
+  header.hero h1 { font-size: 1.75rem; line-height: 1.4; margin: 0 0 8px; color: var(--primary-dark); }
+  header.hero p { color: var(--text-muted); font-size: 0.95rem; margin: 2px 0; }
+  .chip {
+    display: inline-block; background: var(--primary-soft); color: var(--primary-dark);
+    border-radius: 999px; padding: 2px 12px; font-size: 0.85rem; font-weight: 600; margin-top: 6px;
   }
   .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 24px 24px 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px 22px 8px; margin-bottom: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
-  .intro {
-    font-size: 1.02rem;
+  .card.summary { border-color: var(--primary); }
+  h2 { font-size: 1.25rem; margin: 0 0 10px; color: var(--primary-dark); }
+  h3 { font-size: 1.05rem; margin: 16px 0 6px; }
+  p, ul, ol { margin: 0 0 12px; }
+  ul, ol { padding-inline-start: 1.4em; }
+  li { margin-bottom: 4px; }
+  a { color: var(--primary); overflow-wrap: anywhere; }
+  code {
+    background: var(--code-bg); border-radius: 5px; padding: 1px 6px; font-size: 0.88em;
+    font-family: Consolas, "Courier New", monospace; direction: ltr; unicode-bidi: isolate;
+    overflow-wrap: anywhere;
   }
-  h2 {
-    font-size: 1.25rem;
-    color: var(--primary-dark);
-    border-bottom: 2px solid var(--border);
-    padding-bottom: 8px;
-    margin-top: 0;
+  .table-wrap { overflow-x: auto; margin: 0 0 14px; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.93rem; min-width: 560px; }
+  table.narrow { min-width: 0; }
+  th, td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; text-align: start; }
+  th { background: var(--primary-soft); color: var(--primary-dark); font-weight: 700; }
+  .muted { color: var(--text-muted); }
+  footer { text-align: center; color: var(--text-muted); font-size: 0.88rem; margin-top: 28px; }
+  section.policy + section.policy { margin-top: 48px; }
+  .lang-divider { border: 0; border-top: 2px dashed var(--border); margin: 40px 0; }
+  /* With JavaScript, show one language at a time; without it, both stay visible. */
+  html.js-lang section.policy { display: none; }
+  html.js-lang section.policy.active { display: block; }
+  html.js-lang .lang-divider { display: none; }
+  @media print {
+    .lang-bar { display: none; }
+    html.js-lang section.policy { display: block; }
   }
-  h3 {
-    font-size: 1.05rem;
-    color: var(--text);
-    margin-bottom: 6px;
+</style>
+</head>
+<body>
+<main class="page">
+
+<nav class="lang-bar" aria-label="Language / اللغة">
+  <a href="#ar" hreflang="ar" lang="ar" data-lang="ar">العربية</a>
+  <a href="#en" hreflang="en" lang="en" data-lang="en">English</a>
+</nav>
+
+<!-- ============================ العربية ============================ -->
+<section class="policy" id="ar" lang="ar" dir="rtl">
+
+<header class="hero">
+  <h1>سياسة الخصوصية — وئام القرآن</h1>
+  <p>آخر تحديث: 20 نوفمبر 2026</p>
+  <p>الرابط الدائم: <a href="https://ahmadjaff.github.io/wiaam-alquran-privacy/">https://ahmadjaff.github.io/wiaam-alquran-privacy/</a></p>
+  <span class="chip">الإصدار 1.1.0 (18)</span>
+</header>
+
+<div class="card">
+  <p>توضح هذه السياسة:</p>
+  <ul>
+    <li>البيانات التي يحفظها تطبيق «وئام القرآن» على جهازك؛</li>
+    <li>البيانات التي تغادر جهازك، ومتى، وإلى أي جهة، ولأي غرض؛</li>
+    <li>ما تستطيع التحكم فيه.</li>
+  </ul>
+  <p>تنطبق على الإصدار 1.1.0 (18) وما بعده، حتى تُحدَّث هذه الصفحة.</p>
+  <p><strong>المطوّر:</strong> Ahmad Jaff. <strong>للتواصل:</strong> <a href="mailto:ahmadjaff40@gmail.com">ahmadjaff40@gmail.com</a></p>
+</div>
+
+<div class="card summary">
+  <h2>الخلاصة</h2>
+  <ul>
+    <li>التطبيق <strong>مجاني</strong>، <strong>ولا يحتاج حسابًا</strong>، <strong>ولا يعرض إعلانات</strong>، وليس فيه اشتراكات.</li>
+    <li><strong>لا توجد في التطبيق أدوات تحليلات أو تتبع أو تقارير أعطال.</strong> لا يُرسل عدد الصفحات التي تفتحها، ولا ما تنقر عليه، ولا مدة استخدامك.</li>
+    <li><strong>ليس للمطوّر خادم يستقبل بياناتك.</strong> ما تحفظه في التطبيق يبقى على جهازك.</li>
+    <li><strong>البحث في القرآن والتفاسير وقائمة القرّاء يجري على جهازك فقط.</strong> لا تُرسل كلمات البحث، ولا يُحفظ لها سجل.</li>
+    <li>يتصل التطبيق بجهات خارجية <strong>فقط</strong> حين تحتاج ميزة ذلك:
+      <ul>
+        <li>تشغيل تلاوة أو تنزيلها؛</li>
+        <li>تنزيل تفسير غير مضمّن؛</li>
+        <li>البحث عبر الإنترنت عن مدينة؛</li>
+        <li>عرض خريطة القبلة؛</li>
+        <li>جلب تقويم صلاة رسمي لمدينتك.</li>
+      </ul>
+      التفاصيل في القسم 2.
+    </li>
+    <li>كل الاتصالات مشفّرة بـHTTPS.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>1. البيانات المحفوظة على جهازك</h2>
+  <p>يحفظ التطبيق محليًا ما يلي، لتعمل ميزاته بين جلسات الاستخدام:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>النوع</th><th>الأمثلة</th></tr></thead>
+    <tbody>
+      <tr><td>القراءة</td><td>الإشارات المرجعية، وسجل القراءة، وآخر صفحة، ومواضع القراءة في التفاسير، والتفاسير المفضلة</td></tr>
+      <tr><td>الاستماع</td><td>التلاوات المنزّلة وحزمها، ومواضع الاستماع، ومعلومات الملفات المحفوظة</td></tr>
+      <tr><td>الأذكار</td><td>المفضلة</td></tr>
+      <tr><td>الإعدادات</td><td>المظهر، ووضع القراءة، وحجم الخط والمصحف، والقارئ الافتراضي، ووضع البحث المفضل، وصوت تأكيد القبلة واهتزازها، وتقدّم إرشادات «اكتشف وئام»</td></tr>
+      <tr><td>الموقع والصلاة</td><td>المدينة، والإحداثيات، والمنطقة الزمنية، وآخر قياس للموقع ودقته، وموقع القبلة اليدوي إن حدّدته، وطريقة الحساب، والتعديلات اليدوية، وإعدادات الأذان والتنبيهات، ونسخ مؤقتة من جداول المواقيت والتقاويم الرسمية</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><strong>الموقع:</strong> يُحفظ <strong>آخر موقع اخترته أو قِسته فقط</strong>. لا يحتفظ التطبيق بسجل لتنقلاتك.</li>
+    <li><strong>مدة الحفظ:</strong> تبقى البيانات حتى تحذفها من داخل التطبيق، أو تمسح بيانات التطبيق من إعدادات Android، أو تلغي تثبيته. بعض النسخ المؤقتة تُستبدل تلقائيًا. مثلًا يُحدَّث تقويم المدينة المحفوظ بعد 7 أيام.</li>
+    <li><strong>النسخ الاحتياطي:</strong> قد يُدرج نظام Android بيانات التطبيق في النسخة الاحتياطية لجهازك أو حسابك، إذا كانت مفعّلة في إعداداتك. تخضع هذه النسخ لإعدادات جهازك ولسياسة مزوّد النسخ الاحتياطي.</li>
+    <li><strong>التشخيص:</strong> في وضع المطوّر فقط، تتوفر صفحة اختيارية لتشخيص الأداء. سجلها محلي، ولا يتضمن النصوص أو الصوت أو الموقع. <strong>لا يُرسل تلقائيًا أبدًا</strong>، ولا يغادر الجهاز إلا إذا حفظته أو نسخته أنت بنفسك.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>2. البيانات التي تغادر جهازك</h2>
+  <p>لا يتصل التطبيق بأي جهة إلا في الحالات التالية. في كل اتصال يرى الخادم المستقبِل <strong>عنوان IP</strong> الخاص باتصالك، وهذا جزء طبيعي من أي اتصال بالإنترنت.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>متى</th><th>الجهة المستقبِلة</th><th>ما يُرسل</th><th>الغرض</th></tr></thead>
+    <tbody>
+      <tr><td>تشغيل تلاوة أو تنزيلها</td><td>خادم التسجيل الأصلي للقارئ المختار: <code>everyayah.com</code>، أو <code>cdn.mp3quran.net</code>، أو <code>download.qurancomplex.gov.sa</code> (تسجيلات مجمع الملك فهد)</td><td>اسم الملف المطلوب (القارئ والسورة أو الآية)</td><td>جلب التلاوة. بعد التنزيل والتحقق تعمل دون إنترنت</td></tr>
+      <tr><td>فتح تفسير غير مضمّن في التطبيق، أو تنزيل كتاب تفسير</td><td><code>quranenc.com</code>، أو <code>raw.githubusercontent.com</code> (GitHub)</td><td>اسم الملف المطلوب (التفسير والسورة)</td><td>جلب نص التفسير وحفظه محليًا. التفاسير المضمّنة لا تحتاج اتصالًا</td></tr>
+      <tr><td><strong>البحث عبر الإنترنت عن مدينة</strong> (اختياري)، بزر «البحث عن الموقع» في صفحة «المدينة وطريقة الحساب»</td><td>Open-Meteo (<code>geocoding-api.open-meteo.com</code>)</td><td><strong>النص الذي تكتبه</strong>، ورمز الدولة المختارة، ولغة النتائج</td><td>إيجاد المدينة وإحداثياتها. تُحفظ النتيجة التي تختارها على جهازك، ويُحسب بعدها كل شيء دون اتصال. الشاشة تنبّهك إلى هذا الإرسال قبل البحث</td></tr>
+      <tr><td><strong>فتح تبويب «الخريطة»</strong> في صفحة القبلة</td><td>مؤسسة OpenStreetMap (<code>tile.openstreetmap.org</code>)</td><td>طلبات صور الخريطة للمنطقة المعروضة، وهي <strong>حول موقعك</strong> وبتكبير يُظهر الشوارع، ومعها معرّف التطبيق في ترويسة الطلب</td><td>عرض الخريطة. لا يتصل تبويب «البوصلة» بأي جهة</td></tr>
+      <tr><td><strong>تقويم صلاة رسمي لمدينتك:</strong> إذا كان موقعك المحفوظ مطابقًا لمدينة مدعومة في إقليم كوردستان العراق والمناطق المجاورة، وكان «اختيار مرجع المواقيت تلقائيًا» مفعّلًا أو كانت طريقة الحساب المحلية العراقية مختارة</td><td>GitHub (<code>raw.githubusercontent.com</code>)، حيث ينشر مشروع Bang-Kurdistan تقاويمه</td><td><strong>اسم المدينة المطابقة</strong></td><td>جلب جدول المدينة الرسمي. يُحفظ محليًا ويُحدَّث بعد 7 أيام</td></tr>
+      <tr><td>تقويم سنغافورة الرسمي، إذا كان موقعك المحفوظ داخل سنغافورة</td><td><code>data.gov.sg</code></td><td>طلب ثابت، <strong>دون إحداثيات ولا معرّفات</strong></td><td>التحقق من التقويم الرسمي المنشور</td></tr>
+      <tr><td>تحويل إحداثياتك إلى اسم مكان</td><td>خدمة الترميز الجغرافي في نظام Android. على الأجهزة التي فيها خدمات Google Play تقدّمها <strong>Google</strong></td><td><strong>الإحداثيات</strong></td><td>عرض اسم المكان والدولة في صفحة المواقيت حين يحدَّد الموقع من الجهاز</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>المحتوى المضمّن:</strong> صفحات المصحف الـ604، والنص القرآني وفهارسه، والأذكار، والتفاسير المضمّنة، جزء من التطبيق نفسه. فتحها لا يحتاج اتصالًا.</p>
+  <p><strong>الروابط الخارجية:</strong> روابط المصادر والتراخيص وهذه السياسة تُفتح في متصفحك فقط حين تختارها. وتخضع المواقع الخارجية لسياساتها.</p>
+  <p><strong>ما لا يُرسل أبدًا:</strong></p>
+  <ul>
+    <li>كلمات البحث في القرآن والتفاسير والقرّاء؛</li>
+    <li>الإشارات المرجعية وسجل القراءة والمفضلة؛</li>
+    <li>الإعدادات؛</li>
+    <li>أي معرّف للجهاز أو للإعلانات.</li>
+  </ul>
+  <p><strong>مواقيت الصلاة تُحسب على جهازك.</strong> لا تُرسل إحداثياتك إلى أي خادم لحسابها.</p>
+</div>
+
+<div class="card">
+  <h2>3. الموقع</h2>
+  <ul>
+    <li><strong>الموقع اختياري.</strong> يُطلب الإذن <strong>أثناء استخدام التطبيق فقط</strong>. لا يطلب التطبيق إذن الموقع في الخلفية، ولا يتتبعك.</li>
+    <li><strong>بدائل دون إذن:</strong>
+      <ul>
+        <li>رفض الإذن؛</li>
+        <li>اختيار مدينة من القائمة المحفوظة في التطبيق دون إنترنت؛</li>
+        <li>إدخال الإحداثيات يدويًا.</li>
+      </ul>
+    </li>
+    <li><strong>لا يقدّر التطبيق موقعك من عنوان IP.</strong></li>
+    <li><strong>كيف يُحدَّد الموقع:</strong> عبر خدمات الموقع في نظام Android. على كثير من الأجهزة يقدّمها مزوّد الموقع في خدمات Google Play. يخضع ما يجري داخل هذه الخدمات لإعدادات الموقع في جهازك ولسياسة مزوّدها.</li>
+    <li><strong>متى يغادر الموقع جهازك:</strong> في ثلاث حالات فقط، كلها في القسم 2:
+      <ol>
+        <li>خريطة القبلة؛</li>
+        <li>تقويم المدينة الرسمي؛</li>
+        <li>تحويل الإحداثيات إلى اسم مكان.</li>
+      </ol>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>4. البحث</h2>
+  <div class="table-wrap"><table class="narrow">
+    <thead><tr><th>البحث</th><th>أين يجري</th><th>هل يُرسل؟</th></tr></thead>
+    <tbody>
+      <tr><td>في القرآن الكريم</td><td>على نسخة القرآن المضمّنة في التطبيق</td><td>لا</td></tr>
+      <tr><td>في التفاسير</td><td>على الكتب المحفوظة على جهازك</td><td>لا</td></tr>
+      <tr><td>عن قارئ، وفي صفحات التنزيل</td><td>في قوائم التطبيق</td><td>لا</td></tr>
+      <tr><td><strong>عبر الإنترنت عن مدينة</strong></td><td>Open-Meteo</td><td><strong>نعم، النص وحده</strong> (القسم 2)</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>لا يحفظ التطبيق سجلًا لكلمات البحث. يحفظ فقط وضع البحث المفضل («ميسّر» أو «مطابق»).</li>
+    <li>البحث عن مدينة هو <strong>الوحيد</strong> الذي يغادر الجهاز، وهو اختياري، وتنبّهك الشاشة إليه.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>5. ما لا يفعله التطبيق</h2>
+  <ul>
+    <li>لا حسابات ولا تسجيل دخول.</li>
+    <li>لا إعلانات، ولا معرّف إعلانات.</li>
+    <li>لا تحليلات استخدام، ولا أدوات تتبع، ولا تقارير أعطال تلقائية.</li>
+    <li>لا بيع للبيانات، ولا مشاركتها لأغراض تسويقية.</li>
+    <li>لا قراءة لجهات الاتصال أو الرسائل أو الصور أو الملفات، ولا تسجيل صوتي.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>6. أمان الاتصال</h2>
+  <ul>
+    <li>كل الاتصالات تستخدم <strong>HTTPS</strong>.</li>
+    <li>الإصدار يستهدف Android 16 (API 36)، وفيه يمنع النظام الاتصال غير المشفّر افتراضيًا. والتطبيق لا يستثني أي نطاق من هذا المنع.</li>
+    <li><strong>التشفير يحمي الطلب في الطريق، لكنه لا يخفيه عن الجهة المستقبِلة نفسها.</strong> تلك الجهة ترى ما طلبته وعنوان IP.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>7. احتفاظ الجهات الخارجية بالبيانات</h2>
+  <p>هذه الجهات مستقلة عن المطوّر، وتطبّق سياساتها الخاصة. لا يستطيع المطوّر حذف سجلاتها أو التحكم فيها. ما نعرفه من سياساتها المنشورة:</p>
+  <ul>
+    <li><strong>Open-Meteo:</strong> سجلات الخادم في الخدمة المجانية قد تحوي عناوين IP وبيانات الطلب، وتقول إنها تحذفها بعد 90 يومًا.
+      (<a href="https://open-meteo.com/en/terms" rel="noopener">شروطها وسياسة الخصوصية</a>)</li>
+    <li><strong>مؤسسة OpenStreetMap:</strong>
+      <ul>
+        <li>تسجّل بيانات تقنية مثل عنوان IP وتفاصيل الطلب، لأغراض التشغيل والأمان والتخطيط، وتصف هذا التخزين بأنه مؤقت دون أن تحدد مدته.</li>
+        <li>قد تنشر ملخصات مجهولة الهوية.</li>
+        <li>تُقدَّم صور الخريطة عبر شبكة توزيع محتوى (CDN).</li>
+      </ul>
+      (<a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">سياسة الخصوصية</a>)
+    </li>
+    <li><strong>Google:</strong> وفق <a href="https://policies.google.com/privacy" rel="noopener">سياسة خصوصية Google</a>.</li>
+    <li><strong>GitHub:</strong> وفق <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">بيان خصوصية GitHub</a>.</li>
+    <li><strong>خوادم التلاوات والتفاسير و<code>data.gov.sg</code>:</strong> وفق سياسات كل موقع. لا نعرف مدد احتفاظها بالسجلات، ولا نَعِد بشيء نيابة عنها.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>8. الأذونات</h2>
+  <div class="table-wrap"><table class="narrow">
+    <thead><tr><th>الإذن</th><th>الغرض</th></tr></thead>
+    <tbody>
+      <tr><td>الإنترنت وحالة الشبكة</td><td>الحالات المذكورة في القسم 2</td></tr>
+      <tr><td>الموقع الدقيق والتقريبي، <strong>أثناء الاستخدام فقط</strong></td><td>المواقيت والقبلة</td></tr>
+      <tr><td>الإشعارات، والتنبيهات الدقيقة، وإعادة الجدولة بعد إعادة التشغيل، وإبقاء الجهاز نشطًا</td><td>الأذان والتنبيهات التي تفعّلها</td></tr>
+      <tr><td>الخدمة الأمامية للتشغيل وللتنزيل</td><td>تشغيل التلاوة والأذان، وإكمال التنزيلات</td></tr>
+      <tr><td>الاهتزاز، وتعديل إعدادات الصوت</td><td>تأكيد اتجاه القبلة، والرفع المؤقت لصوت الأذان إن فعّلته</td></tr>
+    </tbody>
+  </table></div>
+  <p>لا يمنح أيٌّ منها وصولًا إلى جهات الاتصال أو الرسائل أو الصور. تستطيع إلغاء أي إذن من إعدادات Android.</p>
+</div>
+
+<div class="card">
+  <h2>9. خياراتك وحقوقك</h2>
+  <h3>تحكم في الموقع</h3>
+  <ul>
+    <li>رفض إذن الموقع أو سحبه في أي وقت.</li>
+    <li>اختيار مدينة دون إنترنت، أو إدخال الإحداثيات يدويًا.</li>
+    <li>لعدم إرسال أي منطقة إلى OpenStreetMap: استخدم تبويب «البوصلة» ولا تفتح «الخريطة».</li>
+    <li>لإيقاف جلب تقويم كوردستان: أطفئ «اختيار مرجع المواقيت تلقائيًا» واختر طريقة حساب أخرى.</li>
+  </ul>
+  <h3>احذف بياناتك</h3>
+  <ul>
+    <li>احذف الإشارات والتنزيلات من داخل التطبيق.</li>
+    <li>أو احذف كل البيانات المحلية بمسح بيانات التطبيق من إعدادات Android، أو بإلغاء تثبيته.</li>
+    <li>تحديث التطبيق لا يتطلب مسح بياناته، وتبقى بياناتك المحلية بعد التحديث.</li>
+  </ul>
+  <p><strong>طلبات الحذف من المطوّر:</strong> المطوّر لا يحتفظ بأي نسخة من بياناتك، فلا يوجد لديه ما يُطلب حذفه. أما سجلات الجهات الخارجية المذكورة في القسم 7، فتُطلب منها مباشرة وفق سياساتها.</p>
+  <p><strong>الاستفسار:</strong> لأي سؤال عن الخصوصية: <a href="mailto:ahmadjaff40@gmail.com">ahmadjaff40@gmail.com</a></p>
+</div>
+
+<div class="card">
+  <h2>10. تحديث هذه السياسة</h2>
+  <p>عند تغيّر طريقة تعامل التطبيق مع البيانات، تُحدَّث هذه الصفحة ويُعدَّل تاريخ «آخر تحديث» في أعلاها.</p>
+</div>
+
+</section>
+
+<hr class="lang-divider">
+
+<!-- ============================ English ============================ -->
+<section class="policy" id="en" lang="en" dir="ltr">
+
+<header class="hero">
+  <h1>Privacy Policy — Wiaam Al-Quran (<span lang="ar">وئام القرآن</span>)</h1>
+  <p>Last updated: 20 November 2026</p>
+  <p>Permanent link: <a href="https://ahmadjaff.github.io/wiaam-alquran-privacy/">https://ahmadjaff.github.io/wiaam-alquran-privacy/</a></p>
+  <span class="chip">Version 1.1.0 (18)</span>
+</header>
+
+<div class="card">
+  <p>This policy explains:</p>
+  <ul>
+    <li>what the Wiaam Al-Quran app stores on your device;</li>
+    <li>what data leaves your device, when, to whom and why;</li>
+    <li>what you can control.</li>
+  </ul>
+  <p>It applies to version 1.1.0 (18) and later until this page is updated.</p>
+  <p><strong>Developer:</strong> Ahmad Jaff. <strong>Contact:</strong> <a href="mailto:ahmadjaff40@gmail.com">ahmadjaff40@gmail.com</a></p>
+  <p class="muted">The app's interface is in Arabic. Arabic button and screen names are shown in parentheses.</p>
+</div>
+
+<div class="card summary">
+  <h2>Summary</h2>
+  <ul>
+    <li>The app is <strong>free</strong>, <strong>needs no account</strong>, <strong>shows no ads</strong> and has no subscriptions.</li>
+    <li><strong>The app contains no analytics, tracking or crash-reporting tools.</strong> It does not send which pages you open, what you tap, or how long you use it.</li>
+    <li><strong>The developer has no server that receives your data.</strong> What you save in the app stays on your device.</li>
+    <li><strong>Searching the Quran, tafsir and the reciter list happens on your device only.</strong> Search terms are not sent and no search history is kept.</li>
+    <li>The app contacts outside services <strong>only</strong> when a feature you use needs it:
+      <ul>
+        <li>playing or downloading a recitation;</li>
+        <li>downloading a tafsir that is not bundled;</li>
+        <li>searching online for a city;</li>
+        <li>showing the Qibla map;</li>
+        <li>fetching an official prayer calendar for your city.</li>
+      </ul>
+      Details are in section 2.
+    </li>
+    <li>All connections are encrypted with HTTPS.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>1. Data stored on your device</h2>
+  <p>The app stores the following locally so its features work between sessions:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Type</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td>Reading</td><td>Bookmarks, reading history, last page, tafsir reading positions, favourite tafsirs</td></tr>
+      <tr><td>Listening</td><td>Downloaded recitations and their packages, listening positions, information about saved files</td></tr>
+      <tr><td>Adhkar</td><td>Favourites</td></tr>
+      <tr><td>Settings</td><td>Theme, reading mode, text and Mushaf size, default reciter, preferred search mode, Qibla confirmation sound and vibration, progress through the "Discover Wiaam" (<span lang="ar">اكتشف وئام</span>) tips</td></tr>
+      <tr><td>Location and prayer</td><td>City, coordinates, time zone, the last location reading and its accuracy, a manual Qibla location if you set one, calculation method, manual adjustments, Adhan and alert settings, temporary copies of prayer timetables and official calendars</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><strong>Location:</strong> <strong>only the last location you chose or measured is kept.</strong> The app does not keep a history of your movements.</li>
+    <li><strong>How long it is kept:</strong> data stays until you delete it in the app, clear the app's data in Android settings, or uninstall the app. Some temporary copies are replaced automatically. For example, a saved city calendar is refreshed after 7 days.</li>
+    <li><strong>Backups:</strong> Android may include the app's data in your device or account backup if backup is turned on in your settings. Such backups are governed by your device settings and your backup provider's policy.</li>
+    <li><strong>Diagnostics:</strong> in developer mode only, an optional performance diagnostics page is available. Its log is local and does not include text, audio or location. <strong>It is never sent automatically</strong>, and it leaves the device only if you save or copy it yourself.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>2. Data that leaves your device</h2>
+  <p>The app contacts outside parties only in the cases below. In every connection the receiving server sees your connection's <strong>IP address</strong>, which is a normal part of any internet connection.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>When</th><th>Recipient</th><th>What is sent</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Playing or downloading a recitation</td><td>The chosen reciter's original recording server: <code>everyayah.com</code>, <code>cdn.mp3quran.net</code> or <code>download.qurancomplex.gov.sa</code> (King Fahd Complex recordings)</td><td>The requested file name (reciter and surah or ayah)</td><td>Fetch the recitation. After download and verification it works offline</td></tr>
+      <tr><td>Opening a tafsir that is not bundled, or downloading a tafsir book</td><td><code>quranenc.com</code> or <code>raw.githubusercontent.com</code> (GitHub)</td><td>The requested file name (tafsir and surah)</td><td>Fetch the tafsir text and store it locally. Bundled tafsirs need no connection</td></tr>
+      <tr><td><strong>Online city search</strong> (optional), using the "Search for location" (<span lang="ar">البحث عن الموقع</span>) button on the "City and calculation method" (<span lang="ar">المدينة وطريقة الحساب</span>) page</td><td>Open-Meteo (<code>geocoding-api.open-meteo.com</code>)</td><td><strong>The text you type</strong>, the selected country code and the results language</td><td>Find the city and its coordinates. The result you choose is saved on your device, and everything is then calculated offline. The screen tells you about this transfer before you search</td></tr>
+      <tr><td><strong>Opening the "Map" (<span lang="ar">الخريطة</span>) tab</strong> on the Qibla screen</td><td>OpenStreetMap Foundation (<code>tile.openstreetmap.org</code>)</td><td>Requests for map images of the displayed area, which is <strong>around your location</strong> at a street-level zoom, plus the app identifier in the request header</td><td>Show the map. The "Compass" (<span lang="ar">البوصلة</span>) tab contacts no one</td></tr>
+      <tr><td><strong>An official prayer calendar for your city:</strong> if your saved location matches a supported city in the Kurdistan Region of Iraq and nearby areas, and "Choose prayer-time reference automatically" (<span lang="ar">اختيار مرجع المواقيت تلقائيًا</span>) is on or the local Iraqi calculation method is selected</td><td>GitHub (<code>raw.githubusercontent.com</code>), where the Bang-Kurdistan project publishes its calendars</td><td><strong>The name of the matching city</strong></td><td>Fetch the city's official timetable. It is saved locally and refreshed after 7 days</td></tr>
+      <tr><td>Singapore's official calendar, if your saved location is inside Singapore</td><td><code>data.gov.sg</code></td><td>A fixed request, <strong>with no coordinates or identifiers</strong></td><td>Check the published official calendar</td></tr>
+      <tr><td>Converting your coordinates to a place name</td><td>Android's system geocoding service. On devices with Google Play services it is provided by <strong>Google</strong></td><td><strong>Your coordinates</strong></td><td>Show the place and country name on the prayer-times page when the location comes from the device</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Bundled content:</strong> the 604 Mushaf pages, the Quran text and its indexes, the adhkar and the bundled tafsirs are part of the app. Opening them needs no connection.</p>
+  <p><strong>External links:</strong> links to sources, licences and this policy open in your browser only when you choose them. External sites are governed by their own policies.</p>
+  <p><strong>Never sent:</strong></p>
+  <ul>
+    <li>your Quran, tafsir or reciter search terms;</li>
+    <li>bookmarks, reading history and favourites;</li>
+    <li>settings;</li>
+    <li>any device or advertising identifier.</li>
+  </ul>
+  <p><strong>Prayer times are calculated on your device.</strong> Your coordinates are not sent to any server to calculate them.</p>
+</div>
+
+<div class="card">
+  <h2>3. Location</h2>
+  <ul>
+    <li><strong>Location is optional.</strong> Permission is requested <strong>only while you use the app</strong>. The app does not request background location and does not track you.</li>
+    <li><strong>Alternatives without permission:</strong>
+      <ul>
+        <li>decline the permission;</li>
+        <li>choose a city from the list built into the app, without internet;</li>
+        <li>enter coordinates manually.</li>
+      </ul>
+    </li>
+    <li><strong>The app does not estimate your location from your IP address.</strong></li>
+    <li><strong>How your location is determined:</strong> through Android's location services. On many devices these are provided by the location provider in Google Play services. What happens inside those services is governed by your device's location settings and the provider's policy.</li>
+    <li><strong>When your location leaves the device:</strong> in three cases only, all listed in section 2:
+      <ol>
+        <li>the Qibla map;</li>
+        <li>your city's official calendar;</li>
+        <li>converting coordinates to a place name.</li>
+      </ol>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>4. Search</h2>
+  <div class="table-wrap"><table class="narrow">
+    <thead><tr><th>Search</th><th>Where it runs</th><th>Is it sent?</th></tr></thead>
+    <tbody>
+      <tr><td>In the Holy Quran</td><td>On the copy of the Quran bundled in the app</td><td>No</td></tr>
+      <tr><td>In tafsirs</td><td>On the books saved on your device</td><td>No</td></tr>
+      <tr><td>For a reciter, and in the download pages</td><td>In the app's own lists</td><td>No</td></tr>
+      <tr><td><strong>Online city search</strong></td><td>Open-Meteo</td><td><strong>Yes, the text only</strong> (section 2)</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>The app keeps no history of search terms. It stores only your preferred search mode: "simplified" (<span lang="ar">ميسّر</span>) or "exact" (<span lang="ar">مطابق</span>).</li>
+    <li>City search is the <strong>only</strong> search that leaves the device. It is optional, and the screen tells you about it.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>5. What the app does not do</h2>
+  <ul>
+    <li>No accounts or sign-in.</li>
+    <li>No ads and no advertising identifier.</li>
+    <li>No usage analytics, tracking tools or automatic crash reports.</li>
+    <li>No sale of data, and no sharing for marketing.</li>
+    <li>No access to contacts, messages, photos or files, and no audio recording.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>6. Connection security</h2>
+  <ul>
+    <li>All connections use <strong>HTTPS</strong>.</li>
+    <li>This version targets Android 16 (API 36), where the system blocks unencrypted connections by default. The app makes no exception for any domain.</li>
+    <li><strong>Encryption protects a request in transit, but it does not hide the request from the recipient itself.</strong> The recipient sees what you requested and your IP address.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>7. Retention by outside parties</h2>
+  <p>These parties are independent of the developer and apply their own policies. The developer cannot delete or control their logs. What we know from their published policies:</p>
+  <ul>
+    <li><strong>Open-Meteo:</strong> server logs for the free service may contain IP addresses and request data. It states it deletes them after 90 days.
+      (<a href="https://open-meteo.com/en/terms" rel="noopener">Terms and privacy</a>)</li>
+    <li><strong>OpenStreetMap Foundation:</strong>
+      <ul>
+        <li>It records technical data such as IP addresses and request details for operations, security and planning, and describes this storage as temporary without stating a period.</li>
+        <li>It may publish anonymised summaries.</li>
+        <li>Map images are delivered through a content delivery network (CDN).</li>
+      </ul>
+      (<a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">Privacy policy</a>)
+    </li>
+    <li><strong>Google:</strong> under the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</li>
+    <li><strong>GitHub:</strong> under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub General Privacy Statement</a>.</li>
+    <li><strong>Recitation and tafsir servers, and <code>data.gov.sg</code>:</strong> under each site's own policy. We do not know how long they keep logs, and we make no promises on their behalf.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>8. Permissions</h2>
+  <div class="table-wrap"><table class="narrow">
+    <thead><tr><th>Permission</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Internet and network state</td><td>The cases in section 2</td></tr>
+      <tr><td>Precise and approximate location, <strong>while in use only</strong></td><td>Prayer times and Qibla</td></tr>
+      <tr><td>Notifications, exact alarms, rescheduling after reboot, keeping the device awake</td><td>Adhan and the alerts you turn on</td></tr>
+      <tr><td>Foreground service for playback and for downloads</td><td>Playing recitations and the Adhan, and completing downloads</td></tr>
+      <tr><td>Vibration and audio-settings changes</td><td>Confirming the Qibla direction, and temporarily raising the Adhan volume if you turn that on</td></tr>
+    </tbody>
+  </table></div>
+  <p>None of them gives access to contacts, messages or photos. You can revoke any permission in Android settings.</p>
+</div>
+
+<div class="card">
+  <h2>9. Your choices and rights</h2>
+  <h3>Control your location</h3>
+  <ul>
+    <li>Decline or revoke location permission at any time.</li>
+    <li>Choose a city offline, or enter coordinates manually.</li>
+    <li>To send no area to OpenStreetMap, use the "Compass" (<span lang="ar">البوصلة</span>) tab and do not open "Map" (<span lang="ar">الخريطة</span>).</li>
+    <li>To stop fetching the Kurdistan calendar, turn off "Choose prayer-time reference automatically" (<span lang="ar">اختيار مرجع المواقيت تلقائيًا</span>) and choose another calculation method.</li>
+  </ul>
+  <h3>Delete your data</h3>
+  <ul>
+    <li>Delete bookmarks and downloads in the app.</li>
+    <li>Or remove all local data by clearing the app's data in Android settings, or by uninstalling the app.</li>
+    <li>Updating the app does not require clearing its data; your local data is kept across updates.</li>
+  </ul>
+  <p><strong>Deletion requests to the developer:</strong> the developer keeps no copy of your data, so there is nothing held by the developer to delete. Logs kept by the outside parties in section 7 can be requested from them directly, under their policies.</p>
+  <p><strong>Questions:</strong> for any privacy question: <a href="mailto:ahmadjaff40@gmail.com">ahmadjaff40@gmail.com</a></p>
+</div>
+
+<div class="card">
+  <h2>10. Changes to this policy</h2>
+  <p>When the way the app handles data changes, this page is updated and the "Last updated" date at the top is changed.</p>
+</div>
+
+</section>
+
+<footer>
+  <p lang="ar">© وئام القرآن — Ahmad Jaff</p>
+</footer>
+
+</main>
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js-lang');
+  var links = document.querySelectorAll('.lang-bar a');
+  function show(lang) {
+    if (lang !== 'en') lang = 'ar';
+    var sections = document.querySelectorAll('section.policy');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].classList.toggle('active', sections[i].id === lang);
+    }
+    for (var j = 0; j < links.length; j++) {
+      links[j].setAttribute('aria-current', links[j].getAttribute('data-lang') === lang ? 'true' : 'false');
+    }
+    root.lang = lang;
+    root.dir = lang === 'en' ? 'ltr' : 'rtl';
+    document.title = lang === 'en'
+      ? 'Privacy Policy — Wiaam Al-Quran'
+      : 'سياسة الخصوصية — وئام القرآن';
   }
-  ul {
-    padding-inline-start: 22px;
+  function fromLocation() {
+    var hash = (location.hash || '').replace('#', '').toLowerCase();
+    var query = /[?&]lang=(en|ar)/i.exec(location.search);
+    if (hash === 'en' || hash === 'ar') return hash;
+    if (query) return query[1].toLowerCase();
+    return 'ar';
   }
-  li {
-    margin-bottom: 8px;
-  }
-  strong { color: var(--text); }
-  .contact-box {
-    background: var(--code-bg);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin: 10px 0 18px;
-    font-size: 1rem;
-  }
-  .contact-box .name {
-    font-weight: 700;
-    display: block;
-  }
-  .contact-box a {
-    color: var(--primary);
-    text-decoration: none;
-    word-break: break-all;
-  }
-  .contact-box a:hover { text-decoration: underline; }
-  .note {
-    font-size: 0.92rem;
-    color: var(--text-muted);
-    background: var(--code-bg);
-    border-radius: 10px;
-    padding: 14px 16px;
-    margin: 14px 0 18px;
-  }
-  footer {
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-top: 24px;
-  }
-  @media (max-width: 480px) {
-    header.hero h1 { font-size: 1.5rem; }
-    .card { padding: 18px 16px 4px; border-radius: 10px; }
-    h2 { font-size: 1.1rem; }
-  }
-</style></head><body><main class="page"><header class="hero"><h1>سياسة الخصوصية — وئام القرآن</h1><p class="updated">آخر تحديث: 2 نوفمبر 2026</p></header>
-<div class="card"><p>توضح هذه السياسة البيانات المحلية والطلبات الخارجية في تطبيق وئام القرآن. المطوّر Ahmad Jaff، للتواصل: <a href="mailto:ahmadjaff40@gmail.com">ahmadjaff40@gmail.com</a>. التطبيق مجاني ولا يتطلب حساب مستخدم ولا يتضمن إعلانات أو اشتراكات.</p><p class="note">تغطي هذه الصفحة الإصدار المنشور 1.0.5 والتغييرات المعدّة للإصدار 1.0.6، ولا تعني أن 1.0.6 نُشر. يختلف سلوك الاتصال بحسب الإصدار والميزة المستخدمة.</p></div>
-<div class="card"><h2>البيانات المحفوظة على جهازك</h2><p>تُحفظ الإشارات المرجعية وسجل القراءة والإعدادات والتلاوات المنزلة محليًا. في 1.0.6 تشمل البيانات المحلية أيضًا مفضلة الأذكار والتفاسير ومواضع القراءة، وملفات الصوت وبيانات توقيتها، والمدينة والإحداثيات والمنطقة الزمنية وإعدادات الصلاة وجداولها المؤقتة. قد تبقى بيانات الموقع المختار بعد إغلاق التطبيق للاستخدام اللاحق؛ لا تُرسل إلى خادم خاص بالمطوّر.</p><p>قد يُدرج نظام Android بعض البيانات ضمن نسخ احتياطي تديره إعدادات جهازك وحسابك. وقد تُنشئ النسخة المعدّة سجل تشخيص محليًا؛ لا يُرسل تلقائيًا. لا تتم مشاركة السجل إلا باختيارك عبر إجراء التصدير أو المشاركة.</p></div>
-<div class="card"><h2>المصحف والتفاسير</h2><p>في 1.0.6 تُضمّن صفحات المصحف الـ604 والنصوص والفهارس ومواد التفاسير المؤهلة محليًا؛ لا يحتاج فتح كل صفحة أو تفسير إلى طلب شبكي. الإصدار السابق 1.0.5 قد يجلب رسوم SVG ونصوص تفسير من مستودعات raw.githubusercontent.com، فيرى الخادم عنوان IP ورقم الصفحة أو السورة المطلوبة.</p></div>
-<div class="card"><h2>الموقع ومواقيت الصلاة</h2><ul><li>تحديد الموقع اختياري، بإذن الموقع أثناء الاستخدام؛ لا صلاحية لتتبّع الموقع في الخلفية. قد تعالج خدمة الترميز الجغرافي التابعة للنظام الإحداثيات لتحويلها إلى اسم مدينة وفق سياسة مزوّد النظام.</li><li>عند تعذّر GPS، قد يستخدم مسار الموقع الاحتياطي ipwho.is، الذي يرى عنوان IP ويعيد تقديرًا تقريبيًا للموقع. ويمكنك اختيار المدينة يدويًا.</li><li>في 1.0.6 يرسل البحث الاختياري عن مدينة الاسم المدخل ورمز الدولة إلى geocoding-api.open-meteo.com. تُحفظ النتيجة محليًا.</li><li>قد يُجلب جدول مدينة مدعومة من amozhgary.tv. في 1.0.6 تُحسب المواقيت محليًا حيث لا يتوفر تقويم معتمد، مع تقاويم محلية مضمّنة بحسب التوافر. في 1.0.5 قد تُرسل الإحداثيات والمنطقة الزمنية إلى api.aladhan.com للحساب الاحتياطي.</li></ul><p>هذه الطلبات لا تحمل حساب مستخدم داخل التطبيق. لا نعد بأن مزوّدي الخدمات الخارجية يحذفون عناوين IP أو سجلات الطلبات فورًا؛ يخضع احتفاظهم بالبيانات لسياساتهم.</p><p>توضح <a href="https://open-meteo.com/en/terms" rel="noopener noreferrer">سياسة Open-Meteo</a> أن سجلات خدمة API قد تشمل عناوين IP وبيانات الطلب، وتذكر حذف السجلات بعد 90 يومًا. وتجيز <a href="https://ipwhois.io/privacy" rel="noopener noreferrer">سياسة ipwhois.io</a> تسجيل بيانات استخدام تشمل عنوان IP والاحتفاظ بحسب أغراض المعالجة. لذلك لا نصف هذه الطلبات بأنها معالجة في الذاكرة فقط.</p></div>
-<div class="card"><h2>تشغيل التلاوات وتنزيلها</h2><p>عندما تطلب تشغيل تلاوة أو تنزيلها، يتصل التطبيق بخادم التسجيل الأصلي المختار. تشمل المصادر بحسب القارئ everyayah.com وmp3quran.net وversebyversequran.com، وقد تُطلب بيانات توقيت التسجيل للتزامن. يرى الخادم عنوان IP والملف المطلوب للقارئ أو السورة أو الآية. التلاوات الأساسية تأتي عبر everyayah.com في الإصدار السابق. بعد اكتمال التنزيل والتحقق، تعمل المواد المحفوظة دون اتصال. لا تُرسل محفوظات القراءة أو المفضلة إلى المطوّر من أجل التنزيل.</p></div>
-<div class="card"><h2>الأذونات والروابط والأمان</h2><p>تُستخدم أذونات الإشعارات والتنبيهات الدقيقة وخدمات التشغيل والتنزيل في الخلفية للوظائف التي تختارها، ولا تمنح وصولًا إلى جهات الاتصال أو الرسائل. تستطيع إلغاء الأذونات من إعدادات النظام. تُفتح روابط المصادر وسياسة الخصوصية في المتصفح عند اختيارك، وتخضع المواقع الخارجية لسياساتها.</p><p>تستخدم عناوين الخدمات الموصولة في الشيفرة HTTPS. لا يعني تشفير النقل إخفاء الطلب عن مزوّد الخدمة نفسه. لا يوجد خادم حسابات خاص بالمطوّر أو حزمة إعلانات أو تحليلات استخدام أو إرسال تلقائي لسجلات التشخيص في النسخ الموصوفة.</p></div>
-<div class="card"><h2>التحكم والحذف</h2><p>يمكنك إدارة المحفوظات والملفات المنزلة من التطبيق، ورفض الموقع أو التنبيهات. يزيل مسح بيانات التطبيق أو إلغاء تثبيته البيانات المحلية وفق سلوك النظام؛ لا يلزم مسحها لتحديث التطبيق. لا توجد حسابات تتطلب طلب حذف من خادم للمطوّر. تخضع النسخ التي تصدّرها بنفسك وسياسات النسخ الاحتياطي لإعداداتك والخدمة التي تختارها.</p><p>لا يُوجّه التطبيق طلبات جمع بيانات بغرض الإعلان. عند تحديث سلوك البيانات تُحدّث هذه الصفحة مع تاريخ التعديل. للاستفسار: <a href="mailto:ahmadjaff40@gmail.com">ahmadjaff40@gmail.com</a>.</p></div></main></body></html>
+  window.addEventListener('hashchange', function () { show(fromLocation()); window.scrollTo(0, 0); });
+  show(fromLocation());
+})();
+</script>
+</body>
+</html>
